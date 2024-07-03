@@ -1,0 +1,143 @@
+<%- include('partials/header.ejs') %>
+
+    <style>
+        
+        .add-book-outer-container {
+            display: grid;
+            place-items: center;
+            position: relative;
+        }
+
+        .add-book-inner-container {
+            margin-top: -90px;
+            background-color: rgba(255, 255, 255, 0.151);
+            width: 700px;
+            display: grid;
+            place-items: center;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .add-book-inner-container  .text{
+            font-size: 2.3rem;
+        }
+
+        .add-book-inner-container input {
+            height: 50px;
+            border-radius: 10px;
+            background-color: transparent;
+            border: solid rgb(255, 118, 6);
+            outline: none;
+            width: 400px;
+            transition: all 0.4s ease 0s;
+            font-size: 1.2rem;
+            padding: 20px 45px 20px 20px;
+        }
+
+        .add-book-inner-container input::placeholder {
+            font-size: 1.23rem;
+            color: rgba(255, 255, 255, 0.913);
+            transition: all 0.4s ease 0s;
+        }
+
+        .add-book-inner-container input:hover {
+            width: 410px;
+            height: 55px;
+        }
+
+        .add-book-inner-container .book-details-textarea > input:hover {
+            height: 110px;
+        }
+
+        .add-book-inner-container input:focus {
+            padding-left: 30px;
+            transition: all 0.4s ease 0s;
+            font-size: 1.25rem;
+        }
+
+        .add-book-inner-container > .submit-btn > input {
+            all: unset;
+            background-color: rgb(255, 118, 6);
+            font-size: 1.6rem;
+            padding: 20px 30px 20px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3 ease 0s;
+            margin: 20px 0;
+        }
+
+        .add-book-inner-container > .submit-btn > input:hover {
+            background-color: rgba(255, 118, 6, 0.644);
+        }
+
+        @media screen and (max-width: 737px) {
+
+            .add-book-inner-container {
+                width: 100%;
+            }
+            .add-book-inner-container  .text{
+                font-size: 1.1rem;
+            }
+
+            .add-book-inner-container input {
+                height: 30px;
+                max-width: 250px;
+            }
+
+            .add-book-inner-container input::placeholder {
+                font-size: 1rem;
+            }
+
+            .add-book-inner-container input:hover {
+                width: 260px;
+                height: 55px;
+            }
+
+            .add-book-inner-container > .submit-btn > input {
+                font-size: 1rem;
+            }
+
+            .add-book-inner-container > .submit-btn > input:hover {
+                width: 60px;
+            }
+            
+        }
+
+    </style>
+
+    
+    <form class="content-container add-book-outer-container" action="/submit" style="height:100vh;" method="post" style="z-index: -1">
+        <div class="add-book-inner-container">
+            <div class="text">
+                Book
+            </div>
+            <div class="book-name">
+                <input type="text" name="title" placeholder="Enter book name.">
+            </div>
+            <div class="text">
+                Author Name
+            </div>
+            <div class="name-input">
+                <input type="text" name="author" id="" placeholder="Enter Author name.">
+            </div>
+            <div class="text">
+                Description
+            </div>
+            <div class="book-details-textarea">
+                <input type="text" name="description" id="" placeholder="Enter a short description."></input>
+            </div>
+            <div class="text">
+                Recommendation
+            </div>
+            <div class="recommendation">
+                <input type="text" name="recommendation" placeholder="Enter book name.">
+            </div>
+            <div class="submit-btn">
+                <input type="submit" value="Submit" onclick="showDiv()">
+            </div>
+        </div>
+    </form>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

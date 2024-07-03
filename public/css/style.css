@@ -1,0 +1,438 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --font: 'Montserrat';
+    --primary-color: rgb(245, 247, 248)
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    background: linear-gradient(rgb(0, 0, 0), rgb(5, 5, 5));
+}
+
+body {
+    font-family: var(--font);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+*, 
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+.fixed-wrapper {
+    position: relative;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: 1;
+    background-color: hsla(0, 0%, 2%, 0.959);
+    padding: 30px 0px;
+    
+}
+
+.flex-container *{
+    text-decoration: none;
+    color: hsla(0, 0%, 100%);
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-clip: text;
+}
+
+.brand_logo{
+    margin-left: 4%;
+}
+
+.brand_logo img {
+    width: 180px;
+    object-fit: contain;
+}
+
+.nav_links > ul{
+    list-style: none;
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav_links ul:last-child {
+    padding: 2rem;
+}
+
+.nav_links ul > li, a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav_links ul > li > a:hover {
+    color: #ff7700;
+}
+
+.hamburger-icon {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 20px;
+    top: 60px;
+    opacity: 0;
+    display: none;
+}
+
+.hamburger-icon:hover {
+    cursor: pointer;
+}
+
+.side-bar {
+    height: 330px;
+    background-color: rgba(33, 31, 31, 0.79);
+    padding-top: 20px;
+    width: 250px;
+    margin-top: 100px;
+    position: relative;
+    border-radius: 10% 0 0 10%;
+    position: absolute;
+    top: -90px;
+    right: 10px;
+    display: none;
+} 
+
+.close-btn {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    color: rgb(255, 255, 255);
+    top: 20px;
+    left: 15px;
+}
+
+.close-btn:hover {
+    cursor: pointer;
+}
+
+.side-bar-items > li{
+    margin: 0 0 12% 32%;
+    font-size: 1.3rem;
+    font-weight: bold;
+    list-style: none;
+}
+
+.side-bar-items  li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    transition: all 0.3s ease 0s;
+}
+
+.side-bar-items a:hover {
+    color: #ff7700;
+    font-size: 1.35rem;
+}
+
+.content-container {
+    background: linear-gradient(160deg, rgb(0, 0, 0) 0%, rgb(15, 14, 14) 40%, rgb(48, 48, 48) 40%, black 60%);
+    height: 200vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+.quote {
+    color: hsla(0, 0%, 100%, 0.5);
+    background-image: linear-gradient(90deg, rgb(255, 0, 0), rgb(0, 179, 255));
+    font-size: 5.3rem;
+    background-clip: text;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 160px;
+}
+
+.transition-container {
+    margin-top: 200px;
+    width: 500px;
+    height: 500px;
+    animation: scroll-reveal linear;
+    animation-timeline: view();
+    
+    background-image: url("../assets/images/Pin\ em\ iWallpapers.jpg");
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.t-head {
+    margin-top: 200px;
+    color: white;
+    overflow: hidden;
+    text-align: left; 
+}
+
+.t-head > h3 {
+    font-size: 4.3rem;
+}
+
+@keyframes scroll-reveal {
+    to {
+        margin-top: -200px;
+        width: 100%;
+        height: 70%;
+        border-radius: 0%;
+    }
+    
+    from {
+        border-radius: 50% 50% 0% 0%;
+    }
+}
+
+.main-content-container {
+    background: linear-gradient(-160deg, black 0%, black 50%, rgb(48, 48, 48) 50%, black 80%,rgb(0, 0, 0) 100%);
+}
+
+.main-content-container  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.author {
+    margin-top: 10px;
+    background-clip: text;
+    background-image: linear-gradient(90deg, rgb(107, 143, 145), rgba(66, 66, 66, 0.142) ,rgba(0, 0, 0, 0.582));
+}
+
+.author > * {
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.16);
+}
+
+.read {
+    color: white;
+    margin: 50px 0;
+    font-size: 2.2rem;
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(7px);
+    transform: translateX(-100%);
+    transition: all 2.1s ease 0s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.hidden2 {
+    opacity: 0;
+    filter: blur(7px);
+    transform: translateX(100%);
+    transition: all 2.1s ease 0s;
+}
+
+.show2 {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.book-container {
+    width: 70%;
+    background-color: #2e2d2b9c;
+    padding: 2%;
+    position: relative;
+    z-index: 10;
+}
+
+.book-container  * {
+    color: white;
+}
+
+.book-flex-container {
+    display: flex;
+    justify-content: space-between;
+    background-clip: text;
+    background-image: linear-gradient(90deg, green, yellow);
+}
+
+.edit-icon svg {
+    width: 50px;
+    height: 20px;
+    position: absolute;
+    top: 27px;
+    left: 8px;
+}
+
+.delete-icon svg {
+    width: 50px;
+    height: 20px;
+    position: absolute;
+    top: 27px;
+    right: 8px;
+}
+
+.edit-icon button,
+.delete-icon button{
+    background-color: transparent;
+    border-radius: 10px;
+    border: none;
+    transition: all 350ms ease-in-out;
+    z-index: 9;
+    background-color: black;
+    width: 100px;
+}
+
+.book-title {
+    text-align: center;
+    font-size: 2.7rem;
+    color: rgba(255, 255, 255, 0.071);
+    padding-top: 20px;
+}
+
+.book-cover {
+    width: 400px;
+    height: 350px;
+}
+
+.book-grid-container {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 400px auto;
+    grid-template-rows: auto auto ;
+    gap: 30px;
+}
+
+.book-grid-container .book-description {
+    font-size: 1.6rem;
+    grid-column-start: 2;
+    grid-column-end: -1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+} 
+
+.book-grid-container .book-details {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    font-size: 1.5rem;
+}
+
+.book-links-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.book-links-container > p {
+    font-size: 1.7rem;
+}
+
+.book-links span a{
+    color: #00ffbf9e;
+    text-decoration: none;
+    transition: all 0.3 ease 0s;
+}
+
+.book-links span a:hover{
+    color: #05947a9e;
+}
+
+@media screen and (max-width: 963px) {
+
+    .nav_links > ul {
+        opacity: 0;
+        display: none;
+    }
+
+    .hamburger-icon {
+        opacity: 1;
+        display: block;
+    }
+
+    .quote {
+        font-size: 3.3rem;
+    }
+
+    .t-head > h3 {
+        font-size: 2.3rem;
+    }
+
+    .transition-container {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .author {
+        padding-top: 30px;
+        text-align: center;
+    }
+
+    .book-title {
+        margin-top: 20px;
+    }
+
+    .book-title {
+        font-size: 2.2rem;
+    }
+
+}
+
+@media screen and (max-width: 1428px) {
+    .book-grid-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    .book-title {
+        font-size: 2.2rem;
+    }
+
+    .book-cover {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 467px) {
+
+    .author {
+        font-size: 2.5rem;
+    }
+
+    .book-flex-container  {
+        flex-direction: column;
+    }
+
+    .quote {
+        font-size: 2.5rem;
+        text-align: left;
+        margin-left: 20px;
+    }
+
+    .t-head {
+        width: 100%;
+        height: 100%;
+        margin-left: 15px;
+
+    }
+
+    .t-head > h3 {
+        font-size: 2rem;
+    }
+} 

@@ -1,0 +1,46 @@
+<%- include('partials/header.ejs')  %>
+
+<style>
+    .about-container {
+        display: grid;
+        place-items: center;
+        margin-top: -90px;
+    }
+
+    .about-inner-container {
+        width: 800px;
+        background-image: linear-gradient(90deg, orange, green);
+        background-clip: text;
+    }
+
+    .about-inner-container > p {
+        font-size: 2rem;
+        color: rgba(255, 255, 255, 0);
+        
+    }
+
+    @media screen and (max-width: 841px){
+
+        .about-container {
+            margin-top: -40px;
+        }
+        .about-inner-container {
+            width: 100%;
+            padding: 20px;
+        }
+
+        .about-inner-container > p {
+            font-size: 1.3rem;
+        }          
+    }
+
+</style>
+
+    <div class="content-container about-container" style="height: 100vh;">
+        <div class="about-inner-container">
+            <p>Welcome fellow bookworms! Dive into my bookshelf, overflowing with notes and reflections on the stories that have captivated me. Here, you'll find insightful summaries, thought-provoking takeaways, and recommendations tailored to your next literary adventure.</p>
+        </div>
+    </div>
+
+</body>
+</html>

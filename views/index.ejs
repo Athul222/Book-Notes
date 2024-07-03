@@ -1,0 +1,70 @@
+<%- include('partials/header.ejs') -%>
+
+<section class="content-container">
+    <div class="quote">
+        <p>"A book is a garden,<br> which needs cultivation."</p>
+    </div>
+    <div class="transition-container">
+        <div class="t-head">
+            <h3>With every turned <br> page, my perspective <br> broadens. 
+                Books have <br> challenged my biases <br> and helped me see the <br> world through new <br> eyes.
+            </h3>
+    </div>
+</section>
+
+<section class="main-content-container">
+    <div class="author">
+        <h2 class="author">ATHUL KRISHNA M.M.</h2>
+    </div>
+    <h3 class="read">BOOKS I'VE READ</h3>
+
+    <% if (locals.data) { %>
+        <% data.forEach((item) => { %>
+
+            <div class="book-container hidden">
+                <div class="book-flex-container">
+                    <div class="edit-icon">
+                        <form action="/update" method="post">
+                            <button name="updateButtonId" value="<%= item.id %>">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil pencil-icon" viewBox="0 0 16 16">
+                                    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>
+                                </svg>
+                            </button>
+                            
+                        </form>
+                    </div>
+                    <h3 class="book-title"><%= item.title %> <br>- <%= item.author %></h3>
+                    <div class="delete-icon">
+                        <form action="/delete" method="post">
+                            <button name="deleteButtonId" value="<%= item.id %>">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash trash-icon" viewBox="0 0 16 16">
+                                    <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"/>
+                                </svg>  
+                            </button>
+                            
+                        </form> 
+                    </div>
+                    
+                </div>
+
+                <div class="book-grid-container">
+                <img class="book-cover" src="<%= item.image_url %>" alt=""> 
+                    <p class="book-description">
+                        <%= item.description %>
+                    </p>
+                    <p class="book-details"><%= item.recommendation %></p>
+                </div>
+                <div class="book-links-container">
+                    <p class="book-links">
+                        <span><a href="#">Read my notes</a></span>, or go to the <span><a href="#">Amazon page</a></span> for details and reviews.
+                    </p> 
+                </div>
+                
+            </div>
+        <% }); %>
+    <% } %>
+</section>
+
+<script src="js/main.js"></script>
+</body>
+</html>
