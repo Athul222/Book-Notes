@@ -7,10 +7,10 @@ const app = express();
 const port = 3000;
 
 const db = new pg.Client({
-    user: "postgres",
+    user: "yourUsername",
     host: "localhost",
     database: "book",
-    password: "athul123",
+    password: "yourPassword",
     port: 5432,
 });
 
@@ -52,12 +52,6 @@ async function getData() {
 
 app.get("/", async (req, res) => {
     const data = await getData();
-    
-    // let count = 0;
-    // data.forEach((item) => {
-    //     count += 1;
-    // });
-
     res.render("index.ejs", {data: data});
 });
 
